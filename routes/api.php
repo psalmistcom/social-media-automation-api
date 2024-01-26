@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FacebookPageController;
+use App\Http\Controllers\InstagramPageController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,3 +27,6 @@ Route::group([
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
 });
+
+Route::resource('facebook', FacebookPageController::class);
+Route::resource('instagram', InstagramPageController::class);
