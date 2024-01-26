@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FacebookPageController;
 use App\Http\Controllers\InstagramPageController;
+use App\Http\Controllers\PlanFacebookPostsController;
+use App\Http\Controllers\PlanInstagramPostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +32,6 @@ Route::group([
 
 Route::resource('facebook', FacebookPageController::class);
 Route::resource('instagram', InstagramPageController::class);
+
+Route::resource('plan_facebook_post', PlanFacebookPostsController::class)->only(['index', 'store', 'destroy']);
+Route::resource('plan_instagram_post', PlanInstagramPostsController::class)->only(['index', 'store', 'destroy']);
